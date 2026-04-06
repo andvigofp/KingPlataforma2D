@@ -548,15 +548,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0f1d7f4c0edd8144c88c9e87e952dfb9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MovimientoEnemigo
-  rb2d: {fileID: 587064208}
-  velocidadDeMovimientoBase: 2
-  velocidadDeMovimientoActual: -2
+  rb2D: {fileID: 587064208}
+  animator: {fileID: 769331019}
+  estadoActual: 0
+  velocidadDeMovimientoActual: 2
+  ultimaVelocidadDeMovimiento: -2
   controladorFrente: {fileID: 1102013311}
-  distanciarayoFrente: 0.25
-  capaSuelo:
+  distanciaRayoFrente: 0.25
+  capasSuelo:
     serializedVersion: 2
     m_Bits: 64
-  tocandoSueloFrente: 0
+  tiempoAEsperar: 2
 --- !u!1 &619394800
 GameObject:
   m_ObjectHideFlags: 0
