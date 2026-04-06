@@ -3,8 +3,14 @@ using UnityEngine;
 
 public class MovimientoJugador : MonoBehaviour
 {
+    private const string STRING_VELOCIDAD_HORIZONTAL = "VelocidadHorizontal";
+    private const string STRING_VELOCIDAD_VERTICAL = "VelocidadVertical";
+    private const string STRING_EN_SUELO = "EnSuelo";
+
     [Header("Referencias")]
-    [SerializeField] private Rigidbody2D rb2D;
+    [SerializeField] private Rigidbody2D rb2d;
+    [SerializeField] private Animator animator;
+    
     [Header("Movimiento Horizontal")]
     [SerializeField] private float velocidadMovimiento;
     private float entradaHorizontal;
@@ -31,6 +37,8 @@ public class MovimientoJugador : MonoBehaviour
         }
 
         enSuelo = Physics2D.OverlapBox(controladorSuelo.position, dimensionesCaja, 0f, capasSalto);
+
+        ControladorAnimaciones();
     }
 
     private void FixedUpdate()
@@ -51,7 +59,7 @@ public class MovimientoJugador : MonoBehaviour
     private void Saltar()
     {
         entradaSalto = false;
-        rb2D.AddForce(new Vector2(0, fuerzaSalto), ForceMode2D.Impulse);
+        rb2d.AddForce(new Vector2(0, fuerzaSalto), ForceMode2D.Impulse);
     }
 
     private void ControlarMovimientoHorizontal()
@@ -59,7 +67,7 @@ public class MovimientoJugador : MonoBehaviour
 
         if(!enSuelo && !sePuedeMoverEnElAire){return;}
         
-             rb2D.linearVelocity = new Vector2(entradaHorizontal * velocidadMovimiento, rb2D.linearVelocity.y);
+             rb2d.linearVelocity = new Vector2(entradaHorizontal * velocidadMovimiento, rb2d.linearVelocity.y);
 
             if ((entradaHorizontal > 0 && !MirandoALaDerecha()) || (entradaHorizontal < 0 && MirandoALaDerecha()))
             {
@@ -79,6 +87,13 @@ public class MovimientoJugador : MonoBehaviour
     private bool MirandoALaDerecha()
     {
         return transform.localScale.x == 1;
+    }
+
+    private void ControladorAnimaciones()
+    {
+        animator.SetFloat(STRING_VELOCIDAD_HORIZONTAL, Mathf.Abs(rb2d.linearVelocity.x));
+        animator.SetFloat(STRING_VELOCIDAD_VERTICAL, Mathf.Sign(rb2d.linearVelocity.y));
+        animator.SetBool(STRING_EN_SUELO, enSuelo);
     }
 
     void OnDrawGizmos()
