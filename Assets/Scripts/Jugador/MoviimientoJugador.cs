@@ -1,5 +1,6 @@
 using System;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class MovimientoJugador : MonoBehaviour
 {
@@ -10,34 +11,25 @@ public class MovimientoJugador : MonoBehaviour
     [Header("Referencias")]
     [SerializeField] private Rigidbody2D rb2d;
     [SerializeField] private Animator animator;
-    
+    [SerializeField] private SpriteRenderer spriteRenderer;
+
     [Header("Movimiento Horizontal")]
-    [SerializeField] private float velocidadMovimiento;
+    [SerializeField] private float velocidadMovimiento = 5f;
     private float entradaHorizontal;
 
-    
     [Header("Salto")]
-    
-    [SerializeField] private float fuerzaSalto;
-
+    [SerializeField] private float fuerzaSalto = 5f;
     [SerializeField] private Transform controladorSuelo;
-    [SerializeField] private Vector2 dimensionesCaja;
+    [SerializeField] private Vector2 dimensionesCaja = new Vector2(0.5f, 0.1f);
     [SerializeField] private LayerMask capasSalto;
-    [SerializeField] private bool sePuedeMoverEnElAire;
+    [SerializeField] private bool sePuedeMoverEnElAire = true;
+
     private bool enSuelo;
     private bool entradaSalto;
 
     private void Update()
     {
-        entradaHorizontal = Input.GetAxisRaw("Horizontal");
-
-        if(Input.GetButtonDown("Jump"))
-        {
-            entradaSalto = true;
-        }
-
         enSuelo = Physics2D.OverlapBox(controladorSuelo.position, dimensionesCaja, 0f, capasSalto);
-
         ControladorAnimaciones();
     }
 
@@ -48,56 +40,63 @@ public class MovimientoJugador : MonoBehaviour
         entradaSalto = false;
     }
 
-    private void ControladorSalto()
+    //Mover el Personaje
+    public void OnMove(InputValue value)
     {
-        if (!entradaSalto) {return;}
-        if (!enSuelo) {return;}
-        Saltar();
-
+        Vector2 input = value.Get<Vector2>();
+        entradaHorizontal = input.x;
     }
 
-    private void Saltar()
+    //Saltar el personaje
+    public void OnJump(InputValue value)
     {
-        entradaSalto = false;
-        rb2d.AddForce(new Vector2(0, fuerzaSalto), ForceMode2D.Impulse);
+        if (value.isPressed)
+        {
+            entradaSalto = true;
+        }
+    }
+
+    private void ControladorSalto()
+    {
+        if (!entradaSalto || !enSuelo) return;
+
+        rb2d.linearVelocity = new Vector2(rb2d.linearVelocity.x, 0);
+        rb2d.AddForce(Vector2.up * fuerzaSalto, ForceMode2D.Impulse);
     }
 
     private void ControlarMovimientoHorizontal()
     {
+        if (!enSuelo && !sePuedeMoverEnElAire) return;
 
-        if(!enSuelo && !sePuedeMoverEnElAire){return;}
-        
-             rb2d.linearVelocity = new Vector2(entradaHorizontal * velocidadMovimiento, rb2d.linearVelocity.y);
+        float velocidadObjetivo = entradaHorizontal * velocidadMovimiento;
 
-            if ((entradaHorizontal > 0 && !MirandoALaDerecha()) || (entradaHorizontal < 0 && MirandoALaDerecha()))
-            {
-                Girar();
-            }
-        
-       
-    }
+        rb2d.linearVelocity = new Vector2(
+            Mathf.Lerp(rb2d.linearVelocity.x, velocidadObjetivo, 0.2f),
+            rb2d.linearVelocity.y
+        );
 
-    private void Girar()
-    {
-        Vector3 escala = transform.localScale;
-        escala.x *= -1;
-        transform.localScale = escala;
-    }
-
-    private bool MirandoALaDerecha()
-    {
-        return transform.localScale.x == 1;
+        //GIRO CORRECTO
+        if (entradaHorizontal > 0)
+        {
+            spriteRenderer.flipX = false;
+        }
+        else if (entradaHorizontal < 0)
+        {
+            spriteRenderer.flipX = true;
+        }
     }
 
     private void ControladorAnimaciones()
     {
         animator.SetFloat(STRING_VELOCIDAD_HORIZONTAL, Mathf.Abs(rb2d.linearVelocity.x));
-        animator.SetFloat(STRING_VELOCIDAD_VERTICAL, Mathf.Sign(rb2d.linearVelocity.y));
+        animator.SetFloat(STRING_VELOCIDAD_VERTICAL, rb2d.linearVelocity.y);
         animator.SetBool(STRING_EN_SUELO, enSuelo);
     }
 
-    void OnDrawGizmos()
+    private void OnDrawGizmos()
     {
+        if (controladorSuelo == null) return;
+
         Gizmos.color = Color.yellow;
         Gizmos.DrawWireCube(controladorSuelo.position, dimensionesCaja);
     }
