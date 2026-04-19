@@ -1,5 +1,6 @@
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class CombateJugador : MonoBehaviour
 {   
@@ -15,9 +16,10 @@ public class CombateJugador : MonoBehaviour
     [SerializeField] private float tiempoEntreAtaques;
     [SerializeField] private float tiempoUltimoAtaque;
 
-    private void Update()
+   
+    public void OnAttack(InputValue value)
     {
-        if(Input.GetButtonDown("Fire1"))
+        if (value.isPressed)
         {
             IntentarAtacar();
         }
