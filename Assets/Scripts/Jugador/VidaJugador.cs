@@ -1,5 +1,6 @@
 using System;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class VidaJugador : MonoBehaviour
 {
@@ -41,9 +42,9 @@ public class VidaJugador : MonoBehaviour
         JugadorSeCuro?.Invoke(vidaActual);
     }
 
-    private void DestruirJugador()
+   private void DestruirJugador()
     {
-        Destroy(gameObject);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
     public int GetVidaMaxima() => vidaMaxima;
