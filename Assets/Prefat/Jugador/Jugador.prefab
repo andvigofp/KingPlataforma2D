@@ -31,6 +31,37 @@ Transform:
   m_Children: []
   m_Father: {fileID: 776355008887609282}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &5117632072836654698
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1173626297729505068}
+  m_Layer: 3
+  m_Name: ControladorInteractuar
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1173626297729505068
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5117632072836654698}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.368, y: -0.276, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 776355008887609282}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &5691637108439831159
 GameObject:
   m_ObjectHideFlags: 0
@@ -45,9 +76,11 @@ GameObject:
   - component: {fileID: 314951177241228540}
   - component: {fileID: 9039413991764840120}
   - component: {fileID: 7521430346028035197}
+  - component: {fileID: 4368161221828111455}
+  - component: {fileID: 8673109264577485991}
   m_Layer: 3
   m_Name: Jugador
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -68,6 +101,7 @@ Transform:
   - {fileID: 670090391753071720}
   - {fileID: 2923289574988819766}
   - {fileID: 6034410368063713155}
+  - {fileID: 1173626297729505068}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!50 &4939658357328985238
@@ -214,6 +248,37 @@ MonoBehaviour:
   m_DefaultActionMap: MovimentoJugador
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
+--- !u!114 &4368161221828111455
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5691637108439831159}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f7baebcc314b536488b693a97bcc6c93, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::VidaJugador
+  vidaMaxima: 3
+  vidaActual: 0
+--- !u!114 &8673109264577485991
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5691637108439831159}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 09b099f3324dc7946948856651238adb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::InteractuarObjetoJugador
+  controladorInteractuar: {fileID: 1173626297729505068}
+  dimensionCaja: {x: 0.5, y: 0.5}
+  capasInteractuables:
+    serializedVersion: 2
+    m_Bits: 256
 --- !u!1 &6251424421169439420
 GameObject:
   m_ObjectHideFlags: 0
