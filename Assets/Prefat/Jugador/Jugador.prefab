@@ -275,7 +275,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::InteractuarObjetoJugador
   controladorInteractuar: {fileID: 1173626297729505068}
-  dimensionCaja: {x: 0.5, y: 0.5}
+  dimensionCaja: {x: 1, y: 0.5}
   capasInteractuables:
     serializedVersion: 2
     m_Bits: 256
@@ -358,7 +358,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: -1930694901
-  m_SortingLayer: -1
+  m_SortingLayer: -2
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_Sprite: {fileID: 4236677631525818213, guid: 7d3eb53a73263b940a8a34d99070c3e3, type: 3}

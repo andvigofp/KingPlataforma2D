@@ -42,10 +42,10 @@ public class VidaJugador : MonoBehaviour
         JugadorSeCuro?.Invoke(vidaActual);
     }
 
-   private void DestruirJugador()
-    {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-    }
+  private void DestruirJugador()
+{
+    SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+}
 
     public int GetVidaMaxima() => vidaMaxima;
     public int GetVidaActual() => vidaActual;
