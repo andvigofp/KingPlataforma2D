@@ -2,23 +2,24 @@ using UnityEngine;
 
 public class ZonaMuerte : MonoBehaviour
 {
-    [SerializeField] private Transform puntoRespawn;
     [SerializeField] private int daño = 1;
-void OnTriggerEnter2D(Collider2D other)
-{
-    Debug.Log("Algo entró: " + other.name);
 
-    if (other.CompareTag("Player"))
+    private void OnTriggerEnter2D(Collider2D other)
     {
-        Debug.Log("Es el player");
-        
+        if (!other.CompareTag("Player")) return;
+
+        // daño
         VidaJugador vida = other.GetComponent<VidaJugador>();
         if (vida != null)
         {
             vida.TomarDaño(daño);
         }
 
-        other.transform.position = puntoRespawn.position;
+        // respawn (llamas al del jugador)
+        RespawnJugador respawn = other.GetComponent<RespawnJugador>();
+        if (respawn != null)
+        {
+            respawn.Respawn();
+        }
     }
-}
 }
