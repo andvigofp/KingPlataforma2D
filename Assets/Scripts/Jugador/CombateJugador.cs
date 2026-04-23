@@ -44,9 +44,9 @@ public class CombateJugador : MonoBehaviour
 
         foreach (Collider2D objecto in objetosTocados)
         {
-            if(objecto.TryGetComponent(out VidaEnemigo vidaEnemigo))
+            if(objecto.TryGetComponent(out IGolpeable golpeable))
             {
-                vidaEnemigo.TomarDaño(dañoAtaque);            
+                golpeable.TomarDaño(dañoAtaque);
             }
         }
     }
