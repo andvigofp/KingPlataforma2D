@@ -167,6 +167,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4939658357328985238, guid: 2fab210ab8a66ff468650655afa7487e, type: 3}
+      propertyPath: m_IncludeLayers.m_Bits
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5691637108439831159, guid: 2fab210ab8a66ff468650655afa7487e, type: 3}
       propertyPath: m_Name
       value: Jugador
@@ -963,10 +967,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 2243591838012449788, guid: bbd724956e0b4e84faf0fffb69124e72, type: 3}
-      propertyPath: orthographic size
-      value: 5.8125
-      objectReference: {fileID: 0}
     - target: {fileID: 3413258453346161260, guid: bbd724956e0b4e84faf0fffb69124e72, type: 3}
       propertyPath: m_LocalPosition.x
       value: -4

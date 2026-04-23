@@ -78,6 +78,7 @@ GameObject:
   - component: {fileID: 7521430346028035197}
   - component: {fileID: 4368161221828111455}
   - component: {fileID: 8673109264577485991}
+  - component: {fileID: 3027875509893995306}
   m_Layer: 3
   m_Name: Jugador
   m_TagString: Player
@@ -275,10 +276,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::InteractuarObjetoJugador
   controladorInteractuar: {fileID: 1173626297729505068}
-  dimensionCaja: {x: 0.5, y: 0.5}
+  dimensionCaja: {x: 1, y: 0.5}
   capasInteractuables:
     serializedVersion: 2
     m_Bits: 256
+--- !u!114 &3027875509893995306
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5691637108439831159}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3fcdf3e3674186c4b870589705be5e38, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::RespawnJugador
 --- !u!1 &6251424421169439420
 GameObject:
   m_ObjectHideFlags: 0
@@ -358,7 +371,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: -1930694901
-  m_SortingLayer: -1
+  m_SortingLayer: -3
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_Sprite: {fileID: 4236677631525818213, guid: 7d3eb53a73263b940a8a34d99070c3e3, type: 3}
