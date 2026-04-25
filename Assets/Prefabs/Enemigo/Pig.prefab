@@ -1,5 +1,36 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &64427771730907193
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2626159437737875323}
+  m_Layer: 7
+  m_Name: ControladorFrenteArriba
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2626159437737875323
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 64427771730907193}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.842, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 794150486415833915}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1206829277069485647
 GameObject:
   m_ObjectHideFlags: 0
@@ -34,6 +65,10 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 400983712188742786}
+  - {fileID: 7487307780963016330}
+  - {fileID: 2626159437737875323}
+  - {fileID: 4365072759685418602}
+  - {fileID: 5839518268927135096}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!50 &392186874774354909
@@ -124,14 +159,23 @@ MonoBehaviour:
   rb2D: {fileID: 392186874774354909}
   animator: {fileID: 299941370167574216}
   estadoActual: 0
-  velocidadDeMovimientoActual: 2
-  ultimaVelocidadDeMovimiento: -2
-  controladorFrente: {fileID: 7487307780963016330}
-  distanciaRayoFrente: 0.25
   capasSuelo:
     serializedVersion: 2
     m_Bits: 64
-  tiempoAEsperar: 2
+  velocidadDeMovimientoBase: 2
+  velocidadDeMovimientoActual: 2
+  controladorFrente: {fileID: 7487307780963016330}
+  distanciaRayoFrente: 0.75
+  controladorFrenteArriba: {fileID: 2626159437737875323}
+  tocandoSueloFrenteArriba: 0
+  controladorSuelo: {fileID: 4365072759685418602}
+  distanciaRayoSuelo: 0.25
+  tocandoSuelo: 1
+  tiempoAEsperar: 3
+  fuerzaSalto: 5
+  dimensionesCaja: {x: 0.36, y: 0.05}
+  controladorEstaEnSuelo: {fileID: 5839518268927135096}
+  estaEnElSuelo: 0
 --- !u!114 &8956842548961342053
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -146,6 +190,68 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::VidaEnemigo
   vidaMaxima: 10
   vidaActual: 0
+--- !u!1 &2198123496808740701
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4365072759685418602}
+  m_Layer: 7
+  m_Name: ControladorSuelo
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4365072759685418602
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2198123496808740701}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.212, y: -0.351, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 794150486415833915}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &3436326311678689702
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5839518268927135096}
+  m_Layer: 7
+  m_Name: ControladorEstaEnSuelo
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5839518268927135096
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3436326311678689702}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.108, y: -0.42, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 794150486415833915}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &4047407439759725734
 GameObject:
   m_ObjectHideFlags: 0
@@ -225,7 +331,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 522037829
-  m_SortingLayer: -2
+  m_SortingLayer: -4
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_Sprite: {fileID: 4571226829092849726, guid: eb7fb3cd02d9ad949a76f8922bda1c69, type: 3}
@@ -284,12 +390,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5447965359201164550}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 400983712188742786}
+  m_Father: {fileID: 794150486415833915}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &9102169211107524041
 GameObject:
@@ -321,6 +427,5 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 6130250395254095437}
-  - {fileID: 7487307780963016330}
   m_Father: {fileID: 794150486415833915}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
