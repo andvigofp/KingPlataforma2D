@@ -44,6 +44,12 @@ TagManager:
   - name: Suelo
     uniqueID: 792118967
     locked: 0
+  - name: Pared
+    uniqueID: 763189693
+    locked: 0
+  - name: "Dise\xF1o"
+    uniqueID: 2256388449
+    locked: 0
   - name: Enemigos
     uniqueID: 522037829
     locked: 0
