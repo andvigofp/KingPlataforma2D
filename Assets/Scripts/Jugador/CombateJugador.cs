@@ -1,13 +1,15 @@
-using Unity.VisualScripting;
+using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
 public class CombateJugador : MonoBehaviour
 {   
     private const string STRING_ANIMACION_ATAQUE = "Atacar";
+    public static Action  JugadorGolpeoUnObjectivo;
 
     [Header("Refrerencias")]
     [SerializeField] private Animator animator;
+    
 
     [Header("Ataque")]
     [SerializeField] private Transform controladorAtaque;
@@ -16,7 +18,8 @@ public class CombateJugador : MonoBehaviour
     [SerializeField] private float tiempoEntreAtaques;
     [SerializeField] private float tiempoUltimoAtaque;
 
-   
+    private bool objectivoGolpeado;
+
     public void OnAttack(InputValue value)
     {
         if (value.isPressed)
@@ -41,15 +44,25 @@ public class CombateJugador : MonoBehaviour
         
         Collider2D[] objetosTocados = Physics2D.OverlapCircleAll(controladorAtaque.position, radioAtaque);
 
+        objectivoGolpeado = false;
 
         foreach (Collider2D objecto in objetosTocados)
         {
             if(objecto.TryGetComponent(out IGolpeable golpeable))
             {
                 golpeable.TomarDaño(dañoAtaque);
+                objectivoGolpeado = true;
             }
         }
+
+        if(objectivoGolpeado)
+        {
+            JugadorGolpeoUnObjectivo?.Invoke();
+            
+        }
     }
+
+   
 
    private void OnDrawGizmos()
     {
