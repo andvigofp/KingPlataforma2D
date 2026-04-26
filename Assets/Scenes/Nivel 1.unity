@@ -340,9 +340,91 @@ PrefabInstance:
       propertyPath: m_Name
       value: Jugador
       objectReference: {fileID: 0}
+    - target: {fileID: 7918747933283655615, guid: 2fab210ab8a66ff468650655afa7487e, type: 3}
+      propertyPath: m_Name
+      value: ControladorAtaque1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9025215086912165915, guid: 2fab210ab8a66ff468650655afa7487e, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -284007684338051874, guid: d492e8ded5192c44e89aa1f6d1b250cb, type: 3}
+    - target: {fileID: 9039413991764840120, guid: 2fab210ab8a66ff468650655afa7487e, type: 3}
+      propertyPath: ataquesJugador.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 9039413991764840120, guid: 2fab210ab8a66ff468650655afa7487e, type: 3}
+      propertyPath: ataquesJugador.Array.data[1].tipoAtaque
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9039413991764840120, guid: 2fab210ab8a66ff468650655afa7487e, type: 3}
+      propertyPath: ataquesJugador.Array.data[0].radioAtaque
+      value: 0.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 9039413991764840120, guid: 2fab210ab8a66ff468650655afa7487e, type: 3}
+      propertyPath: ataquesJugador.Array.data[2].radioAtaque
+      value: 0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 9039413991764840120, guid: 2fab210ab8a66ff468650655afa7487e, type: 3}
+      propertyPath: ataquesJugador.Array.data[0].nombreAtaque
+      value: Ataque Arriba
+      objectReference: {fileID: 0}
+    - target: {fileID: 9039413991764840120, guid: 2fab210ab8a66ff468650655afa7487e, type: 3}
+      propertyPath: ataquesJugador.Array.data[1].nombreAtaque
+      value: Ataque Enfrente
+      objectReference: {fileID: 0}
+    - target: {fileID: 9039413991764840120, guid: 2fab210ab8a66ff468650655afa7487e, type: 3}
+      propertyPath: ataquesJugador.Array.data[2].nombreAtaque
+      value: Ataque Abajo
+      objectReference: {fileID: 0}
+    - target: {fileID: 9039413991764840120, guid: 2fab210ab8a66ff468650655afa7487e, type: 3}
+      propertyPath: "ataquesJugador.Array.data[0].cantidadDeDa\xF1o"
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9039413991764840120, guid: 2fab210ab8a66ff468650655afa7487e, type: 3}
+      propertyPath: ataquesJugador.Array.data[0].stringAnimacion
+      value: Ataque1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9039413991764840120, guid: 2fab210ab8a66ff468650655afa7487e, type: 3}
+      propertyPath: "ataquesJugador.Array.data[1].cantidadDeDa\xF1o"
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9039413991764840120, guid: 2fab210ab8a66ff468650655afa7487e, type: 3}
+      propertyPath: ataquesJugador.Array.data[1].stringAnimacion
+      value: Ataque2
+      objectReference: {fileID: 0}
+    - target: {fileID: 9039413991764840120, guid: 2fab210ab8a66ff468650655afa7487e, type: 3}
+      propertyPath: ataquesJugador.Array.data[2].stringAnimacion
+      value: Ataque3
+      objectReference: {fileID: 0}
+    - target: {fileID: 9039413991764840120, guid: 2fab210ab8a66ff468650655afa7487e, type: 3}
+      propertyPath: ataquesJugador.Array.data[0].controladorAtaque
+      value: 
+      objectReference: {fileID: 1655909134}
+    - target: {fileID: 9039413991764840120, guid: 2fab210ab8a66ff468650655afa7487e, type: 3}
+      propertyPath: ataquesJugador.Array.data[1].controladorAtaque
+      value: 
+      objectReference: {fileID: 818418766}
+    - target: {fileID: 9039413991764840120, guid: 2fab210ab8a66ff468650655afa7487e, type: 3}
+      propertyPath: ataquesJugador.Array.data[1].dimensionesCaja.x
+      value: 1.66
+      objectReference: {fileID: 0}
+    - target: {fileID: 9039413991764840120, guid: 2fab210ab8a66ff468650655afa7487e, type: 3}
+      propertyPath: ataquesJugador.Array.data[1].dimensionesCaja.y
+      value: 0.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 9039413991764840120, guid: 2fab210ab8a66ff468650655afa7487e, type: 3}
+      propertyPath: ataquesJugador.Array.data[2].controladorAtaque
+      value: 
+      objectReference: {fileID: 1647167809}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
-    m_AddedGameObjects: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: 776355008887609282, guid: 2fab210ab8a66ff468650655afa7487e, type: 3}
+      insertIndex: 3
+      addedObject: {fileID: 818418766}
+    - targetCorrespondingSourceObject: {fileID: 776355008887609282, guid: 2fab210ab8a66ff468650655afa7487e, type: 3}
+      insertIndex: 4
+      addedObject: {fileID: 1647167809}
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 5691637108439831159, guid: 2fab210ab8a66ff468650655afa7487e, type: 3}
       insertIndex: -1
@@ -575,6 +657,42 @@ MonoBehaviour:
     DissipationDistance: 100
     PropagationSpeed: 343
   DefaultVelocity: {x: 0, y: 0, z: 0}
+--- !u!4 &762131946 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 776355008887609282, guid: 2fab210ab8a66ff468650655afa7487e, type: 3}
+  m_PrefabInstance: {fileID: 180529385}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &818418765
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 818418766}
+  m_Layer: 3
+  m_Name: ControladorAtaque2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &818418766
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 818418765}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.15, y: -0.028, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 762131946}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1290669360
 GameObject:
   m_ObjectHideFlags: 0
@@ -715,6 +833,42 @@ PrefabInstance:
 PolygonCollider2D:
   m_CorrespondingSourceObject: {fileID: 6523491591621521118, guid: ef010ef7a6f4b9d45a3787aa726667f7, type: 3}
   m_PrefabInstance: {fileID: 1368655203}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1647167808
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1647167809}
+  m_Layer: 3
+  m_Name: ControladorAtaque3
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1647167809
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1647167808}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.15, y: -0.028, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 762131946}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &1655909134 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6034410368063713155, guid: 2fab210ab8a66ff468650655afa7487e, type: 3}
+  m_PrefabInstance: {fileID: 180529385}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &3222557622905590477
 PrefabInstance:
@@ -1091,7 +1245,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3366073900197453916, guid: 1a474acc9299c94498ba23998920fc81, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.27
+      value: -2.95
       objectReference: {fileID: 0}
     - target: {fileID: 3366073900197453916, guid: 1a474acc9299c94498ba23998920fc81, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1148,11 +1302,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6634757408953276192, guid: 6121b04ba46d54b478f84c8179afdf26, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 3.46
+      value: -2.05
       objectReference: {fileID: 0}
     - target: {fileID: 6634757408953276192, guid: 6121b04ba46d54b478f84c8179afdf26, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.76
+      value: -2.54
       objectReference: {fileID: 0}
     - target: {fileID: 6634757408953276192, guid: 6121b04ba46d54b478f84c8179afdf26, type: 3}
       propertyPath: m_LocalPosition.z
